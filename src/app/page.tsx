@@ -14,12 +14,14 @@ const Home = async () => {
       variants: true,
     },
   });
+
   const newlyCreatedProducts = await db.query.productTable.findMany({
     orderBy: [desc(productTable.createdAt)],
     with: {
       variants: true,
     },
   });
+  
   const categories = await db.query.categoryTable.findMany({});
 
   return (
