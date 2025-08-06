@@ -3,7 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import SignInForm from "./components/sign-in-form";
 import SignUpForm from "./components/sign-up-form";
 
-const Auth = async () => {
+const Authentication = async () => {
   return (
     <>
       <Header />
@@ -26,4 +26,4 @@ const Auth = async () => {
   );
 };
 
-export default Auth;
+export default Authentication;
