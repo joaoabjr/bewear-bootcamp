@@ -9,6 +9,9 @@ import { db } from "@/db";
 import { productTable, productVariantTable } from "@/db/schema";
 import { formatCentsToBRL } from "@/helpers/money";
 
+import ProductActions from "./components/product-actions";
+import VariantSelector from "./components/variant-selector";
+
 // import ProductActions from "./components/product-actions";
 // import VariantSelector from "./components/variant-selector";
 
@@ -50,14 +53,14 @@ const ProductVariantPage = async ({ params }: ProductVariantPageProps) => {
           sizes="100vw"
           height={0}
           width={0}
-          className="h-auto w-full object-cover rounded-t-2xl rounded-b-4xl"
+          className="h-auto w-full object-cover rounded-t-xl rounded-b-xl drop-shadow-lg"
         />
 
         <div className="px-5">
-          {/* <VariantSelector
+          <VariantSelector
             selectedVariantSlug={productVariant.slug}
             variants={productVariant.product.variants}
-          /> */}
+          />
         </div>
 
         <div className="px-5">
@@ -72,13 +75,13 @@ const ProductVariantPage = async ({ params }: ProductVariantPageProps) => {
           </h3>
         </div>
 
+        <ProductActions productVariantId={productVariant.id} />
+
         <div className="px-5">
           <p className="text-shadow-amber-600">
             {productVariant.product.description}
           </p>
         </div>
-
-        {/* <ProductActions productVariantId={productVariant.id} /> */}
         
         <ProductList title="Talvez você goste" products={likelyProducts} />
 
